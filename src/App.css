@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "tailwindcss/theme";
+@import 'animate.css';
+@import 'tailwindcss/line-clamp';
+@import 'framer-motion';
+
+
+@theme {
+  --color-SC: #F5FFDF;
+  --font-poppins: Poppins, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* App.css */
+body {
+  @apply font-poppins;
+}
+
+
+/* In your App.css */
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animation-delay-1s {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-2s {
+  animation-delay: 1s;
+}
+
+.animation-delay-3s {
+  animation-delay: 1.5s;
+}
+
+.animation-delay-4s {
+  animation-delay: 2s;
+}
+
+.animation-delay-5s {
+  animation-delay: 2.5s;
+}
