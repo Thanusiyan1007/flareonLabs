@@ -1,11 +1,8 @@
 @import "tailwindcss";
-@import "tailwindcss/theme";
-@import 'animate.css';
-@import 'tailwindcss/line-clamp';
-@import 'framer-motion';
+@import "animate.css";
 
-
-@theme {
+/* Define custom properties using standard CSS syntax */
+:root {
   --color-SC: #F5FFDF;
   --font-poppins: Poppins, sans-serif;
 }
@@ -14,15 +11,10 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: var(--font-poppins);
 }
 
-/* App.css */
-body {
-  @apply font-poppins;
-}
-
-
-/* In your App.css */
+/* Slide-in animation using @keyframes */
 .animate-slide-in-left {
   animation: slideInLeft 0.5s ease-out forwards;
 }
@@ -38,22 +30,9 @@ body {
   }
 }
 
-.animation-delay-1s {
-  animation-delay: 0.5s;
-}
-
-.animation-delay-2s {
-  animation-delay: 1s;
-}
-
-.animation-delay-3s {
-  animation-delay: 1.5s;
-}
-
-.animation-delay-4s {
-  animation-delay: 2s;
-}
-
-.animation-delay-5s {
-  animation-delay: 2.5s;
-}
+/* Custom animation delays */
+.animation-delay-1s { animation-delay: 0.5s; }
+.animation-delay-2s { animation-delay: 1s; }
+.animation-delay-3s { animation-delay: 1.5s; }
+.animation-delay-4s { animation-delay: 2s; }
+.animation-delay-5s { animation-delay: 2.5s; }
