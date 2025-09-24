@@ -36,7 +36,7 @@ function App() {
           <link rel="canonical" href="https://flareonlabs.com/" />
 
           {/* Open Graph */}
-          <meta property="og:title" content="Flareon Labs | React & Tailwind Web Design Studio" />
+          <meta property="og:title" content="Flareon Labs | Spark Your Vision with Us" />
           <meta
             property="og:description"
             content="We bring ideas to life with React, Tailwind, and modern SEO strategies."
