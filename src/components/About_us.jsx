@@ -59,35 +59,7 @@ function About_us() {
                  bg-gradient-to-b from-yellow-50 to-white 
                  dark:from-zinc-900 dark:to-zinc-950"
     >
-      {/* 🟡 SEO Helmet */}
-      <Helmet>
-        <title>About Us | Flareon Labs</title>
-        <meta
-          name="description"
-          content="Learn about Flareon Labs, a creative studio crafting sleek, user-centered digital experiences. 
-                   We specialize in UI/UX design, branding, React, Tailwind, and digital innovation."
-        />
-        <link rel="canonical" href="https://flareonlabs.com/about" />
-
-        {/* Open Graph for social sharing */}
-        <meta property="og:title" content="About Us | Flareon Labs" />
-        <meta
-          property="og:description"
-          content="Flareon Labs: Empowering businesses, creators, and startups with modern, user-first digital solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flareonlabs.com/about" />
-        <meta property="og:image" content="https://flareonlabs.com/og-about.png" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Flareon Labs" />
-        <meta
-          name="twitter:description"
-          content="Discover the story, mission, and values of Flareon Labs – your partner in innovative digital design."
-        />
-        <meta name="twitter:image" content="https://flareonlabs.com/og-about.png" />
-      </Helmet>
+      
 
       {/* Decorative Shapes */}
       <motion.div

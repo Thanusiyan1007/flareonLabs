@@ -66,35 +66,7 @@ export default function OurWorks() {
       className="relative py-20 px-4 sm:px-6 
                  bg-gradient-to-b from-yellow-50 to-white dark:from-zinc-900 dark:to-zinc-950 overflow-hidden"
     >
-      {/* 🟡 SEO Helmet Tags */}
-      <Helmet>
-        <title>Our Works | Flareon Labs Portfolio</title>
-        <meta
-          name="description"
-          content="Explore Flareon Labs' portfolio: branding, web design, and development projects built with React, TailwindCSS, and modern digital strategies."
-        />
-        <link rel="canonical" href="https://flareonlabs.com/works" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Our Works | Flareon Labs" />
-        <meta
-          property="og:description"
-          content="See selected works by Flareon Labs: sleek React websites, creative branding, and cutting-edge digital strategy projects."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flareonlabs.com/works" />
-        <meta property="og:image" content="https://flareonlabs.com/og-works.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Works | Flareon Labs" />
-        <meta
-          name="twitter:description"
-          content="Dive into our creative projects in branding, React, and Tailwind development."
-        />
-        <meta name="twitter:image" content="https://flareonlabs.com/og-works.png" />
-      </Helmet>
-
+      
       {/* Decorative Shapes */}
       <div className="hidden sm:block absolute top-0 left-0 w-[180px] md:w-[280px] lg:w-[380px] transform scale-y-[-1] pointer-events-none select-none z-0 animate-fadeInUp">
         <img src={shape1} alt="Decorative Top Shape" className="w-full h-auto" />

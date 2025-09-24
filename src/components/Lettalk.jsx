@@ -45,34 +45,7 @@ function Lettalk() {
       className="relative py-20 px-4 md:px-12 bg-gradient-to-b 
                  from-yellow-50 to-white dark:from-zinc-900 dark:to-zinc-950 overflow-hidden"
     >
-      {/* 🟡 SEO Helmet */}
-      <Helmet>
-        <title>Contact Us | Flareon Labs</title>
-        <meta
-          name="description"
-          content="Contact Flareon Labs to discuss your digital project. Reach us for React, Tailwind, Branding, and modern SEO-driven web experiences."
-        />
-        <link rel="canonical" href="https://flareonlabs.com/contact" />
-
-        {/* Open Graph Tags (Facebook / LinkedIn) */}
-        <meta property="og:title" content="Contact Flareon Labs" />
-        <meta
-          property="og:description"
-          content="We would love to hear from you! Reach out to Flareon Labs for collaboration on web design, UI/UX, and SEO projects."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flareonlabs.com/contact" />
-        <meta property="og:image" content="https://flareonlabs.com/og-contact.png" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Flareon Labs" />
-        <meta
-          name="twitter:description"
-          content="Get in touch with Flareon Labs today. Let’s create something amazing together."
-        />
-        <meta name="twitter:image" content="https://flareonlabs.com/og-contact.png" />
-      </Helmet>
+      
 
       {/* Decorative Shapes */}
       <div className="absolute top-0 left-0 w-[180px] md:w-[280px] lg:w-[380px] 

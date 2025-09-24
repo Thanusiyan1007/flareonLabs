@@ -50,35 +50,7 @@ export default function Home({ darkMode }) {
                  bg-gradient-to-b from-yellow-50 to-white dark:from-zinc-900 dark:to-zinc-950
                  text-gray-900 dark:text-white transition-all duration-300"
     >
-      {/* 🟡 SEO Helmet */}
-      <Helmet>
-        <title>Flareon Labs | React & Tailwind Web Studio</title>
-        <meta
-          name="description"
-          content="Flareon Labs designs sleek, user-centered digital experiences powered by React, TailwindCSS, and SEO strategies. Spark your vision with us."
-        />
-        <meta name="keywords" content="React, Tailwind, SEO, Web Design, UI/UX, Flareon Labs" />
-        <link rel="canonical" href="https://flareonlabs.com/" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Flareon Labs - Futuristic Digital Design Studio" />
-        <meta
-          property="og:description"
-          content="We bring ideas to life with React, Tailwind, and modern SEO practices."
-        />
-        <meta property="og:url" content="https://flareonlabs.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://flareonlabs.com/og-home.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Flareon Labs" />
-        <meta
-          name="twitter:description"
-          content="Build beautiful websites with React, Tailwind & SEO. Flareon Labs is your creative digital partner."
-        />
-        <meta name="twitter:image" content="https://flareonlabs.com/og-home.png" />
-      </Helmet>
+      
 
       {/* Decorative Shapes */}
       <motion.div

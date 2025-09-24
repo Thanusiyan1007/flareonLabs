@@ -15,34 +15,7 @@ function ServiceNew() {
       className="relative text-gray-900 dark:text-white py-20 px-6 overflow-hidden font-manrope \
                  bg-gradient-to-b from-yellow-50 to-white dark:from-zinc-900 dark:to-zinc-950"
     >
-      {/* 🟡 SEO Helmet */}
-      <Helmet>
-        <title>Our Services | Flareon Labs</title>
-        <meta
-          name="description"
-          content="Discover Flareon Labs services: branding & identity design, React & Tailwind website development, and smart digital strategies for growth."
-        />
-        <link rel="canonical" href="https://flareonlabs.com/services" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Our Services | Flareon Labs" />
-        <meta
-          property="og:description"
-          content="Explore the services from Flareon Labs: creative branding, responsive React websites, and data-driven digital strategy."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flareonlabs.com/services" />
-        <meta property="og:image" content="https://flareonlabs.com/og-services.png" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Services | Flareon Labs" />
-        <meta
-          name="twitter:description"
-          content="Branding, React + Tailwind development, and digital growth strategies by Flareon Labs."
-        />
-        <meta name="twitter:image" content="https://flareonlabs.com/og-services.png" />
-      </Helmet>
+      
 
       {/* Decorative Shapes */}
       <div className="absolute bottom-0 left-0 w-[180px] md:w-[280px] lg:w-[380px] pointer-events-none select-none z-0 animate-fadeInUp">

@@ -42,34 +42,7 @@ function Team() {
       className="relative py-20 px-6 overflow-hidden font-manrope 
                  bg-gradient-to-b from-yellow-50 to-white dark:from-zinc-900 dark:to-zinc-950 dark:text-white"
     >
-      {/* 🟡 SEO Helmet */}
-      <Helmet>
-        <title>Our Executive Team | Flareon Labs</title>
-        <meta
-          name="description"
-          content="Meet the executive team at Flareon Labs – CEO, designers, HR, and client success professionals driving innovation in React, Tailwind, and digital design."
-        />
-        <link rel="canonical" href="https://flareonlabs.com/team" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Our Executive Team | Flareon Labs" />
-        <meta
-          property="og:description"
-          content="Discover the talented executives leading Flareon Labs – creative thinkers, UI/UX designers, and client managers driving innovation."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flareonlabs.com/team" />
-        <meta property="og:image" content="https://flareonlabs.com/og-team.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Executive Team | Flareon Labs" />
-        <meta
-          name="twitter:description"
-          content="Meet Flareon Labs’ executive team: experts in UI/UX, branding, and digital projects."
-        />
-        <meta name="twitter:image" content="https://flareonlabs.com/og-team.png" />
-      </Helmet>
+      
 
       {/* Decorative Shapes */}
             <div className="absolute bottom-0 left-0 w-[180px] md:w-[280px] lg:w-[380px] pointer-events-none select-none z-0 animate-fadeInUp">
