@@ -1,92 +1,150 @@
-import React from 'react'
-import { Brush, Code, BarChart } from 'lucide-react'
-import shape1 from "../assets/shape.svg"
+import React from "react";
+import { Brush, Code, BarChart } from "lucide-react";
+import { Helmet } from "react-helmet-async"; // ✅ SEO
+import shape1 from "../assets/shape.svg";
 
 function ServiceNew() {
-  const boxClasses = "flex items-center justify-center text-base font-medium py-3 px-2 min-h-[48px] rounded-xl border border-yellow-400 dark:border-yellow-500 text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-zinc-800"
+  const boxClasses =
+    "flex items-center justify-center text-sm sm:text-base font-medium py-2 px-3 min-h-[48px] rounded-xl \
+     border border-yellow-400/40 text-yellow-700 dark:text-yellow-400 \
+     bg-white/40 dark:bg-zinc-800/40 backdrop-blur-sm transition";
 
   return (
-    <div className="relative text-gray-900 dark:bg-zinc-950 dark:text-white py-20 px-6 overflow-hidden font-manrope" id='services'>
+    <section
+      id="services"
+      className="relative text-gray-900 dark:text-white py-20 px-6 overflow-hidden font-manrope \
+                 bg-gradient-to-b from-yellow-50 to-white dark:from-zinc-900 dark:to-zinc-950"
+    >
+      {/* 🟡 SEO Helmet */}
+      <Helmet>
+        <title>Our Services | Flareon Labs</title>
+        <meta
+          name="description"
+          content="Discover Flareon Labs services: branding & identity design, React & Tailwind website development, and smart digital strategies for growth."
+        />
+        <link rel="canonical" href="https://flareonlabs.com/services" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Our Services | Flareon Labs" />
+        <meta
+          property="og:description"
+          content="Explore the services from Flareon Labs: creative branding, responsive React websites, and data-driven digital strategy."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flareonlabs.com/services" />
+        <meta property="og:image" content="https://flareonlabs.com/og-services.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Services | Flareon Labs" />
+        <meta
+          name="twitter:description"
+          content="Branding, React + Tailwind development, and digital growth strategies by Flareon Labs."
+        />
+        <meta name="twitter:image" content="https://flareonlabs.com/og-services.png" />
+      </Helmet>
+
       {/* Decorative Shapes */}
-      <div className="absolute bottom-0 left-0 w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] pointer-events-none select-none -z-10 animate-fadeInUp">
+      <div className="absolute bottom-0 left-0 w-[180px] md:w-[280px] lg:w-[380px] pointer-events-none select-none z-0 animate-fadeInUp">
         <img
           src={shape1}
           alt="Decorative Bottom Shape"
-          className="w-full h-auto object-contain transition duration-500 brightness-100 dark:brightness-75 dark:drop-shadow-md"
+          className="w-full h-auto object-contain opacity-90"
         />
       </div>
-      <div className="absolute top-0 right-0 w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] transform scale-x-[-1] scale-y-[-1] pointer-events-none select-none -z-10 animate-fadeInUp">
+      <div className="absolute top-0 right-0 w-[180px] md:w-[280px] lg:w-[380px] transform -scale-x-100 -scale-y-100 \
+                      pointer-events-none select-none z-0 animate-fadeInUp">
         <img
           src={shape1}
           alt="Decorative Top Shape"
-          className="w-full h-auto object-contain transition duration-500 brightness-100 dark:brightness-75 dark:drop-shadow-md"
+          className="w-full h-auto object-contain opacity-90"
         />
       </div>
 
       {/* Heading */}
-      <div className="text-center mb-10">
+      <div className="text-center mb-14 relative z-10">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold">
           Our Services
         </h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">
-          FlareonLabs empowers your business with beautiful designs, powerful websites, and data-driven strategies.
+        <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-xl mx-auto text-lg">
+          FlareonLabs empowers your business with beautiful designs, powerful
+          websites, and data-driven strategies.
         </p>
       </div>
 
       {/* Service Cards */}
-      <div className="max-w-screen mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-6 sm:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
 
         {/* Service 1 */}
-        <div className="bg-white border border-yellow-400 dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-          <Brush className="w-12 h-12 text-yellow-600 dark:text-yellow-400 mb-4" />
-          <h2 className="text-2xl font-semibold mb-3">Branding & Identity</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            We craft distinctive brand identities that reflect your vision and resonate with your target audience.
+        <article
+          className="p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 
+                     bg-white/30 dark:bg-zinc-900/40 backdrop-blur-lg 
+                     border border-yellow-400/40"
+        >
+          <Brush className="w-12 h-12 text-yellow-600 dark:text-yellow-400 mb-5" />
+          <h3 className="text-2xl font-semibold mb-3">Branding & Identity</h3>
+          <p className="text-gray-700 dark:text-gray-300 mb-5">
+            Craft distinctive brand identities that reflect your vision and
+            resonate with your audience.
           </p>
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            {['Logo Design', 'Color Strategy', 'Typography Set', 'Brand Guidelines'].map((item, index) => (
-              <div key={index} className={boxClasses}>
-                {item}
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-3">
+            {["Logo Design", "Color Strategy", "Typography Set", "Brand Guidelines"].map(
+              (item, idx) => (
+                <div key={idx} className={boxClasses}>
+                  {item}
+                </div>
+              )
+            )}
           </div>
-        </div>
+        </article>
 
         {/* Service 2 */}
-        <div className="bg-white border border-yellow-400 dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-          <Code className="w-12 h-12 text-yellow-600 dark:text-yellow-400 mb-4" />
-          <h2 className="text-2xl font-semibold mb-3">Web Design & Development</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            From idea to execution, we build fast, responsive websites using modern frameworks like React and Tailwind.
+        <article
+          className="p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 
+                     bg-white/30 dark:bg-zinc-900/40 backdrop-blur-lg 
+                     border border-yellow-400/40"
+        >
+          <Code className="w-12 h-12 text-yellow-600 dark:text-yellow-400 mb-5" />
+          <h3 className="text-2xl font-semibold mb-3">Web Design & Development</h3>
+          <p className="text-gray-700 dark:text-gray-300 mb-5">
+            Build fast, responsive websites using modern frameworks like React
+            and Tailwind.
           </p>
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            {['UI/UX Design', 'React Dev', 'Tailwind CSS', 'API Integration'].map((item, index) => (
-              <div key={index} className={boxClasses}>
-                {item}
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-3">
+            {["UI/UX Design", "React Dev", "Tailwind CSS", "API Integration"].map(
+              (item, idx) => (
+                <div key={idx} className={boxClasses}>
+                  {item}
+                </div>
+              )
+            )}
           </div>
-        </div>
+        </article>
 
         {/* Service 3 */}
-        <div className="bg-white border border-yellow-400 dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-          <BarChart className="w-12 h-12 text-yellow-600 dark:text-yellow-400 mb-4" />
-          <h2 className="text-2xl font-semibold mb-3">Digital Strategy</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            We help your business grow with smart strategies, data insights, and improvements that lead to real results.
+        <article
+          className="p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 
+                     bg-white/30 dark:bg-zinc-900/40 backdrop-blur-lg 
+                     border border-yellow-400/40"
+        >
+          <BarChart className="w-12 h-12 text-yellow-600 dark:text-yellow-400 mb-5" />
+          <h3 className="text-2xl font-semibold mb-3">Digital Strategy</h3>
+          <p className="text-gray-700 dark:text-gray-300 mb-5">
+            Grow your business with smart strategies, data insights, and actionable improvements.
           </p>
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            {['Content Creation', 'SM Management', 'Social Ads', 'Consulting Services'].map((item, index) => (
-              <div key={index} className={boxClasses}>
-                {item}
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-3">
+            {["Content Creation", "SM Management", "Social Ads", "Consulting Services"].map(
+              (item, idx) => (
+                <div key={idx} className={boxClasses}>
+                  {item}
+                </div>
+              )
+            )}
           </div>
-        </div>
-
+        </article>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 
-export default ServiceNew
+export default ServiceNew;

@@ -1,68 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import AboutUs from './components/About_us';
-import ServiceNew from './components/ServiceNew';
-import Ourworks from './components/Ourworks';
-import Team from './components/Team';
-import Lettalk from './components/Lettalk';
-import Loader from './components/Loader'; // Import the Loader
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { HelmetProvider } from "react-helmet-async"; // SEO provider
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import AboutUs from "./components/About_us";
+import ServiceNew from "./components/ServiceNew";
+import Ourworks from "./components/Ourworks";
+import Team from "./components/Team";
+import Lettalk from "./components/Lettalk";
+import Loader from "./components/Loader";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate network delay or failure detection
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // Simulate a 2s load time or adjust as needed
-
-    // Cleanup timer to prevent memory leaks
+    const timer = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />; // Show loader component during loading state
-  }
+  if (isLoading) return <Loader />;
 
   return (
-    <div className="min-h-screen flex flex-col relative">
-      {/* Navbar - No animation */}
-      <div className="flex-grow z-100">
+    <HelmetProvider>
+      <div className="min-h-screen flex flex-col relative 
+                      bg-gradient-to-b from-yellow-50 to-white 
+                      dark:from-zinc-900 dark:to-zinc-950">
+        {/* Navbar */}
         <Navbar />
-      </div>
 
-      {/* Home - Slide In */}
-      <div className="flex-grow animate-slide-in-left">
-        <Home />
+        {/* Main content */}
+        <main className="flex-grow">
+          <Home />
+          <AboutUs />
+          <ServiceNew />
+          <Ourworks />
+          <Team />
+          <Lettalk />
+        </main>
       </div>
-
-      {/* About Us - Slide In with delay */}
-      <div className="flex-grow animate-slide-in-left animation-delay-1s">
-        <AboutUs />
-      </div>
-
-      {/* Services - Slide In with delay */}
-      <div className="flex-grow animate-slide-in-left animation-delay-2s">
-        <ServiceNew />
-      </div>
-
-      {/* Our Works - Slide In with delay */}
-      <div className="flex-grow animate-slide-in-left animation-delay-3s">
-        <Ourworks />
-      </div>
-
-      {/* Team - Slide In with delay */}
-      <div className="flex-grow animate-slide-in-left animation-delay-4s">
-        <Team />
-      </div>
-
-      {/* Contact - Slide In with delay */}
-      <div className="flex-grow animate-slide-in-left animation-delay-5s">
-        <Lettalk />
-      </div>
-    </div>
+    </HelmetProvider>
   );
 }
 

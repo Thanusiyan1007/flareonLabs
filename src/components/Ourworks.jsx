@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img1 from "../assets/2.jpg";
+import { Helmet } from "react-helmet-async"; // ✅ SEO
 import shape1 from "../assets/shape.svg";
 import logop1 from "../assets/projects/logop1.png";
 import wepp1 from "../assets/projects/webp1.png";
@@ -11,15 +11,16 @@ const works = [
     platform: "Adobe Illustrator",
     image: logop1,
     description:
-      "Crafted a modern and versatile logo re-design to represent a unique brand identity.",
+      "Crafted a modern and versatile logo redesign to represent a unique brand identity and stand out in competitive markets.",
     link: "https://www.linkedin.com/company/ryzite/posts/?feedView=all",
   },
   {
-    title: "kezi Website Redesign",
+    title: "Kezi Website Redesign",
     category: "Web Design & Development",
     platform: "React & TailwindCSS",
     image: wepp1,
-    description: "Kezi Reliable Deliveries, Anytime, Anywhere!",
+    description:
+      "Developed a sleek and responsive web redesign for Kezi, optimized for reliability, performance, and user experience.",
     link: "https://kezi.netlify.app/",
   },
 ];
@@ -47,84 +48,121 @@ export default function OurWorks() {
   );
 
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
   const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    setCurrentPage(1); // Reset page
+    setCurrentPage(1);
   };
 
   return (
-    <section className="relative bg-white text-black py-12 md:py-20 px-4 sm:px-6" id="ourworks">
-      {/* Decorative Shapes - Hidden on small mobile */}
-      <div className="hidden sm:block absolute top-0 left-0 w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] transform scale-y-[-1] pointer-events-none select-none z-0 animate-fadeInUp">
-        <img src={shape1} alt="Top Shape" className="w-full h-auto" />
+    <section
+      id="ourworks"
+      className="relative py-20 px-4 sm:px-6 
+                 bg-gradient-to-b from-yellow-50 to-white dark:from-zinc-900 dark:to-zinc-950 overflow-hidden"
+    >
+      {/* 🟡 SEO Helmet Tags */}
+      <Helmet>
+        <title>Our Works | Flareon Labs Portfolio</title>
+        <meta
+          name="description"
+          content="Explore Flareon Labs' portfolio: branding, web design, and development projects built with React, TailwindCSS, and modern digital strategies."
+        />
+        <link rel="canonical" href="https://flareonlabs.com/works" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Our Works | Flareon Labs" />
+        <meta
+          property="og:description"
+          content="See selected works by Flareon Labs: sleek React websites, creative branding, and cutting-edge digital strategy projects."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flareonlabs.com/works" />
+        <meta property="og:image" content="https://flareonlabs.com/og-works.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Works | Flareon Labs" />
+        <meta
+          name="twitter:description"
+          content="Dive into our creative projects in branding, React, and Tailwind development."
+        />
+        <meta name="twitter:image" content="https://flareonlabs.com/og-works.png" />
+      </Helmet>
+
+      {/* Decorative Shapes */}
+      <div className="hidden sm:block absolute top-0 left-0 w-[180px] md:w-[280px] lg:w-[380px] transform scale-y-[-1] pointer-events-none select-none z-0 animate-fadeInUp">
+        <img src={shape1} alt="Decorative Top Shape" className="w-full h-auto" />
       </div>
-      <div className="hidden sm:block absolute bottom-0 right-0 w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] transform scale-x-[-1] pointer-events-none select-none z-0 animate-fadeInUp">
-        <img src={shape1} alt="Bottom Shape" className="w-full h-auto" />
+      <div className="hidden sm:block absolute bottom-0 right-0 w-[180px] md:w-[280px] lg:w-[380px] transform scale-x-[-1] pointer-events-none select-none z-0 animate-fadeInUp">
+        <img src={shape1} alt="Decorative Bottom Shape" className="w-full h-auto" />
       </div>
 
-      {/* Heading */}
-      <div className="text-center mb-8 max-w-2xl mx-auto relative z-10 px-2">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Our Works</h2>
-        <p className="text-gray-600 text-base sm:text-lg">
-          Explore some of our recent projects that blend creativity, strategy,
-          and technology.
+      {/* Section Heading */}
+      <header className="text-center mb-10 relative z-10 max-w-3xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
+          Our Works
+        </h2>
+        <p className="text-gray-700 dark:text-gray-300 mt-3 text-base sm:text-lg">
+          Explore some of our recent projects that blend creativity, strategy, and technology.
         </p>
-      </div>
+      </header>
 
-      {/* Category Buttons - Scrollable on mobile */}
-      <div className="relative z-10 mb-8 sm:mb-10">
-        <div className="flex overflow-x-auto pb-2 sm:pb-0 sm:justify-center gap-3 sm:gap-4 px-2 sm:px-0 hide-scrollbar">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => handleCategoryChange(cat)}
-              className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full border font-medium transition whitespace-nowrap ${
+      {/* Category Buttons */}
+      <nav
+        aria-label="Portfolio Categories"
+        className="relative z-10 mb-10 flex overflow-x-auto sm:justify-center gap-3 sm:gap-4 pb-2 px-2 hide-scrollbar"
+      >
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => handleCategoryChange(cat)}
+            className={`px-5 py-2 rounded-full font-medium transition whitespace-nowrap backdrop-blur-md
+              ${
                 selectedCategory === cat
-                  ? "bg-yellow-500 text-white border-yellow-500"
-                  : "bg-white border-yellow-300 text-gray-700 hover:bg-gray-100"
+                  ? "bg-yellow-500 text-white shadow-md"
+                  : "bg-white/40 dark:bg-zinc-800/40 text-gray-700 dark:text-gray-300 border border-yellow-300/40 hover:bg-yellow-100/40"
               }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Cards Grid - Single column on mobile */}
-      <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 max-w-7xl mx-auto relative z-10 px-2 sm:px-4">
-        {currentWorks.map((work, index) => (
-          <div
-            key={index}
-            className="border-2 border-yellow-400 rounded-xl overflow-hidden shadow-md flex flex-col sm:flex-row bg-white"
           >
-            {/* Image - full width on mobile, fixed width on larger screens */}
-            <div className="w-full h-[180px] sm:w-[200px] md:w-[250px] lg:w-[300px] sm:h-[200px] md:h-[220px] overflow-hidden">
+            {cat}
+          </button>
+        ))}
+      </nav>
+
+      {/* Works Grid */}
+      <div className="grid gap-8 sm:grid-cols-2 max-w-6xl mx-auto relative z-10 px-2">
+        {currentWorks.map((work, index) => (
+          <article
+            key={index}
+            className="rounded-2xl overflow-hidden shadow-lg 
+                       bg-white/30 dark:bg-zinc-900/40 backdrop-blur-lg 
+                       border border-yellow-400/40 
+                       flex flex-col sm:flex-row transition hover:scale-[1.02]"
+          >
+            {/* Image */}
+            <div className="w-full sm:w-[240px] lg:w-[280px] h-[200px] overflow-hidden">
               <img
                 src={work.image}
-                alt={work.title}
+                alt={`${work.title} built with ${work.platform}`}
                 className="w-full h-full object-cover"
               />
             </div>
 
             {/* Content */}
-            <div className="p-4 flex flex-col justify-between flex-1">
+            <div className="p-5 flex flex-col justify-between flex-1">
               <div>
-                <span className="text-xs sm:text-sm text-yellow-600 font-semibold">
+                <span className="text-xs uppercase font-semibold tracking-wide text-yellow-600 dark:text-yellow-400">
                   {work.platform}
                 </span>
-                <h3 className="text-base sm:text-lg font-bold mt-1">{work.title}</h3>
-                <p className="text-gray-700 text-xs sm:text-sm mt-1 line-clamp-3">
+                <h3 className="text-lg font-bold mt-1 dark:text-white">
+                  {work.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mt-2 line-clamp-3">
                   {work.description}
                 </p>
               </div>
@@ -133,41 +171,35 @@ export default function OurWorks() {
                   href={work.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-3 px-3 py-1 bg-yellow-500 text-white text-xs sm:text-sm rounded-full hover:bg-yellow-600 w-fit transition"
+                  className="mt-4 self-start px-4 py-2 text-sm rounded-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium transition"
                 >
                   View Work
                 </a>
               )}
             </div>
-          </div>
+          </article>
         ))}
       </div>
 
-      {/* Pagination - Stacked on mobile */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 relative z-10">
-        <div className="flex items-center order-2 sm:order-none">
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className="px-4 py-2 sm:px-6 sm:py-3 bg-yellow-500 text-white rounded-full shadow-md hover:bg-yellow-600 disabled:opacity-50 transition duration-200 ease-in-out text-sm sm:text-base"
-          >
-            &lt; Previous
-          </button>
-
-          <div className="mx-4 text-sm sm:text-base text-gray-700">
-            <span className="font-medium">
-              Page {currentPage} / {totalPages}
-            </span>
-          </div>
-
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className="px-4 py-2 sm:px-6 sm:py-3 bg-yellow-500 text-white rounded-full shadow-md hover:bg-yellow-600 disabled:opacity-50 transition duration-200 ease-in-out text-sm sm:text-base"
-          >
-            Next &gt;
-          </button>
-        </div>
+      {/* Pagination */}
+      <div className="flex items-center justify-center gap-6 mt-10 relative z-10">
+        <button
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          className="px-5 py-2 sm:px-6 sm:py-3 bg-yellow-500 text-white rounded-full shadow-md hover:bg-yellow-600 disabled:opacity-50 transition text-sm sm:text-base"
+        >
+          &lt; Prev
+        </button>
+        <span className="text-gray-700 dark:text-gray-300 font-medium">
+          Page {currentPage} / {totalPages}
+        </span>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          className="px-5 py-2 sm:px-6 sm:py-3 bg-yellow-500 text-white rounded-full shadow-md hover:bg-yellow-600 disabled:opacity-50 transition text-sm sm:text-base"
+        >
+          Next &gt;
+        </button>
       </div>
     </section>
   );
