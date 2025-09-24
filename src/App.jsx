@@ -24,7 +24,7 @@ function App() {
       <>
         {/* 🟡 GLOBAL SEO Helmet */}
         <Helmet>
-          <title>Flareon Labs | React & Tailwind Web Design Studio</title>
+          <title>FlareonLabs | park Your Vision with Us</title>
           <meta
             name="description"
             content="Flareon Labs is a creative digital studio delivering sleek web design, UI/UX, and branding powered by React, Tailwind CSS, and SEO. We also craft social media posters and digital designs that help startups and businesses grow online."
